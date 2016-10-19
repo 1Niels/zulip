@@ -108,7 +108,13 @@ td .button {
     display: block;
 }
 
-.settings-section.show {
+.settings-wrapper {
+    display: none;
+}
+
+.settings-section.show,
+.settings-wrapper.show,
+.settings-wrapper.show .settings-section {
     display: block;
 }
 
@@ -510,7 +516,7 @@ input[type=checkbox].inline-block {
 
     background-color: rgba(0,0,0,0.8);
     z-index: 102;
-    min-height: 300px;
+    min-height: 550px;
 }
 
 #settings_page {
@@ -532,9 +538,21 @@ input[type=checkbox].inline-block {
     position: relative;
     width: 250px;
     height: 100%;
-    min-height: 300px;
+    min-height: 550px;
     overflow-y: auto;
     background-color: #edefef;
+    border-top-left-radius: 4px;
+}
+
+#settings_page .sidebar .tab-container {
+    border-right: 1px solid #edefef;
+    background-color: #fff;
+    padding: 10px;
+}
+
+#settings_page .sidebar .settings-list {
+    position: relative;
+    z-index: 3;
 }
 
 #settings_page .content-wrapper {
@@ -640,6 +658,10 @@ input[type=text]#settings_search {
 #settings_page .sidebar li.active {
     background-color: #21cbc2;
     color: #fff;
+}
+
+#settings_page .sidebar li.admin.active {
+    background-color: #3686c3;
 }
 
 #settings_page .sidebar li.active .text {

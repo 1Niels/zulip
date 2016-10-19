@@ -830,12 +830,21 @@ exports.update_page = function () {
 
 exports.hide_settings_page = function () {
     $("#settings_overlay_container").removeClass("show");
-    hashchange.unignore();
 };
 
 exports.launch_page = function (tab) {
     var $li = $("#settings_overlay_container li[data-section]");
     var $active_tab = $("#settings_overlay_container li[data-section='" + tab + "']");
+    var sel = "[data-name='" + tab + "']";
+
+    if ($active_tab.hasClass("admin")) {
+        $(".sidebar .ind-tab[data-name='admin']").click();
+        $("li[data-section='" + tab + "']").click();
+    } else {
+        $(".sidebar .ind-tab[data-name='settings']").click();
+    }
+
+    $("#settings_overlay_container").addClass("show");
 
     if (!$active_tab.hasClass("admin")) {
         $(".sidebar .ind-tab[data-name='settings']").click();
