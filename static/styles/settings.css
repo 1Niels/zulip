@@ -586,6 +586,17 @@ input[type=checkbox].inline-block {
     margin: 7px 20px 0 0;
 }
 
+#deactivation_user_modal.fade.in {
+    top: calc(50% - 120px);
+}
+
+#deactivate_self_modal {
+    box-shadow: 0px 0px 75px rgba(0,0,0,0.5);
+    outline: 10000px solid rgba(0,0,0,0.3);
+    border: none;
+    border-radius: 0px;
+}
+
 input[type=text]#settings_search {
     width: calc(100% - 10px - 2px);
     margin: 0px;

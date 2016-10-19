@@ -196,7 +196,7 @@ function get_main_hash(hash) {
 
 function should_ignore(hash) {
     // an array of hashes to ignore (eg. ["subscriptions", "settings", "administration"]).
-    var ignore_list = ["subscriptions", "settings"];
+    var ignore_list = ["subscriptions", "settings", "administration"];
     var main_hash = get_main_hash(hash);
 
     return (ignore_list.indexOf(main_hash) > -1);
