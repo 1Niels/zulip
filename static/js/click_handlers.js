@@ -495,14 +495,16 @@ $(function () {
         $("#settings_overlay_container .sidebar").on("click", "li[data-section]", function () {
             var $this = $(this);
             var section = $this.data("section");
+            var sel = "[data-name='" + section + "']";
 
             $("#settings_overlay_container .sidebar li").removeClass("active no-border");
             $this.addClass("active");
             $this.prev().addClass("no-border");
 
             window.location.hash = "settings/" + section;
-            $(".settings-section").removeClass("show");
-            $(".settings-section[data-name='" + section + "']").addClass("show");
+
+            $(".settings-section, .settings-wrapper").removeClass("show");
+            $(".settings-section" + sel + ", .settings-wrapper" + sel).addClass("show");
         });
 
         $("#settings_overlay_container").on("click", function (e) {
