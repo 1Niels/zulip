@@ -174,9 +174,9 @@ function _setup_page() {
         });
     }
 
-    // Most browsers do not allow filenames to start with `.` without the user manually changing it.
-    var settings_tab = templates.render('settings_tab', {page_params: page_params, zuliprc: 'zuliprc'});
-    $("#settings").html(settings_tab);
+    var settings_tab = templates.render('settings_tab', {page_params: page_params});
+
+    $("#settings_content .settings-box").html(settings_tab);
     $("#settings-status").hide();
     $("#notify-settings-status").hide();
     $("#display-settings-status").hide();
@@ -835,16 +835,6 @@ exports.hide_settings_page = function () {
 exports.launch_page = function (tab) {
     var $li = $("#settings_overlay_container li[data-section]");
     var $active_tab = $("#settings_overlay_container li[data-section='" + tab + "']");
-    var sel = "[data-name='" + tab + "']";
-
-    if ($active_tab.hasClass("admin")) {
-        $(".sidebar .ind-tab[data-name='admin']").click();
-        $("li[data-section='" + tab + "']").click();
-    } else {
-        $(".sidebar .ind-tab[data-name='settings']").click();
-    }
-
-    $("#settings_overlay_container").addClass("show");
 
     if (!$active_tab.hasClass("admin")) {
         $(".sidebar .ind-tab[data-name='settings']").click();

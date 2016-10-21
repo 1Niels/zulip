@@ -1,28 +1,15 @@
 <div id="settings-change-box" class="new-style">
+    <div class="alert" id="settings-status"></div>
 
-  <div class="alert" id="settings-status"></div>
+    {{ partial "account-settings" }}
 
-  {{ partial "account-settings" }}
+    {{ partial "display-settings" }}
 
-  {{ partial "display-settings" }}
+    {{ partial "notification-settings" }}
 
-  {{ partial "notification-settings" }}
+    {{ partial "bot-settings" }}
+
+    {{ partial "alert-word-settings" }}
+
+    {{ partial "ui-settings" }}
 </div>
-
-{{ partial "bot-settings" }}
-
-{{ partial "alert-word-settings" }}
-
-{{ partial "ui-settings" }}
-
-{{ partial "organization-settings-admin" }}
-
-{{ partial "user-list-admin" }}
-
-{{ partial "deactivated-users-admin" }}
-
-{{ partial "bot-list-admin" }}
-
-{{ partial "streams-list-admin" }}
-
-{{ partial "default-streams-list-admin" }}

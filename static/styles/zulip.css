@@ -2088,7 +2088,32 @@ div.floating_recipient {
     table-layout: fixed;
 }
 
-.administration {
+.subscription-email-hint-image {
+    float: right;
+    width: 80px;
+    padding-right: 60px;
+}
+
+.subscription_header.collapsed {
+    background-color: inherit;
+}
+
+.subscription_settings,
+.subscription_header,
+.subscription_header.active {
+    background-color: #fefefe;
+}
+
+.color_swatch {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    padding: 0;
+    margin: 0 0 0 10px;
+    vertical-align: middle;
+}
+
+.subscriptions {
     margin-top: 55px;
     padding-left: 15px;
 }
