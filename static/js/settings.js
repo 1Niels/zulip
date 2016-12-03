@@ -149,6 +149,16 @@ function _setup_page() {
     // at page load. This promise will be resolved with a list of streams after
     // the first settings page load. build_stream_list then adds a callback to
     // the promise, which in most cases will already be resolved.
+
+    var tab = (function () {
+        var tab = false;
+        var hash_sequence = window.location.hash.split(/\//);
+        if (/#*(settings|administration)/.test(hash_sequence[0])) {
+            tab = hash_sequence[1];
+        }
+        return tab || "your-account";
+    }());
+
     if (_streams_deferred.state() !== "resolved") {
         channel.get({
             url: '/json/streams',
@@ -178,6 +188,8 @@ function _setup_page() {
     $("#get_api_key_box").hide();
     $("#show_api_key_box").hide();
     $("#api_key_button_box").show();
+
+    exports.launch_page(tab);
 
     function clear_password_change() {
         // Clear the password boxes so that passwords don't linger in the DOM
@@ -444,10 +456,14 @@ function _setup_page() {
         });
     });
 
+    $("#default_language_modal [data-dismiss]").click(function (e) {
+      $("#default_language_modal").fadeOut(300);
+    });
+
     $("#default_language_modal .language").click(function (e) {
         e.preventDefault();
         e.stopPropagation();
-        $('#default_language_modal').modal('hide');
+        $('#default_language_modal').fadeOut(300);
 
         var data = {};
         var $link = $(e.target).closest("a[data-code]");
@@ -476,7 +492,7 @@ function _setup_page() {
     $('#default_language').on('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        $('#default_language_modal').modal('show');
+        $('#default_language_modal').show().attr('aria-hidden', false);
     });
 
     $("#user_deactivate_account_button").on('click', function (e) {
@@ -810,6 +826,23 @@ exports.setup_page = function () {
 
 exports.update_page = function () {
     i18n.ensure_i18n(_update_page);
+};
+
+exports.hide_settings_page = function () {
+    $("#settings_overlay_container").removeClass("show");
+    hashchange.unignore();
+};
+
+exports.launch_page = function (tab) {
+    var $li = $("#settings_overlay_container li[data-section]");
+    var $active_tab = $("#settings_overlay_container li[data-section='" + tab + "']");
+
+    if (!$active_tab.hasClass("admin")) {
+        $(".sidebar .ind-tab[data-name='settings']").click();
+    }
+
+    $("#settings_overlay_container").addClass("show");
+    $active_tab.click();
 };
 
 return exports;

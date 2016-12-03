@@ -202,6 +202,7 @@ casper.waitForSelector('#create_alert_word_form', function () {
 
 casper.then(function change_default_language() {
     casper.test.info('Changing the default language');
+    casper.click('[data-section="display-settings"]');
     casper.waitForSelector('#default_language');
 });
 
@@ -242,6 +243,7 @@ casper.waitForSelector("#settings-change-box", function check_url_preference() {
         return document.documentElement.lang;
     }, 'de');
     casper.test.info("Changing language back to English.");
+    casper.click('[data-section="display-settings"]');
 });
 
 casper.thenClick('#default_language');

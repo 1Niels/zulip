@@ -52,8 +52,8 @@ exports.initialize = function () {
     var admin_link = $('#gear-menu a[href="#administration"]');
     admin_link.on('shown', admin.setup_page);
 
-    var settings_link = $('#gear-menu a[href="#settings"]');
-    settings_link.on('shown', settings.setup_page);
+    var settings_link = $('#gear-menu a[data-popup="settings"]');
+    settings_link.on('click', settings.setup_page);
 };
 
 return exports;

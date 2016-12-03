@@ -191,12 +191,12 @@ var ignore = {
 };
 
 function get_main_hash(hash) {
-    return hash.replace(/^#/, "").split(/\//)[0];
+    return hash ? hash.replace(/^#/, "").split(/\//)[0] : "";
 }
 
 function should_ignore(hash) {
     // an array of hashes to ignore (eg. ["subscriptions", "settings", "administration"]).
-    var ignore_list = ["subscriptions"];
+    var ignore_list = ["subscriptions", "settings"];
     var main_hash = get_main_hash(hash);
 
     return (ignore_list.indexOf(main_hash) > -1);
@@ -214,6 +214,7 @@ function hashchanged(from_reload, e) {
     }
 
     var base = get_main_hash(window.location.hash);
+
     if (should_ignore(window.location.hash)) {
         if (!should_ignore(old_hash || "#")) {
             if (base === "subscriptions") {

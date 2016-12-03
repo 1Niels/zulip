@@ -262,6 +262,17 @@ function _setup_page() {
     $('#admin-filter-pattern-status').expectOne().hide();
     $('#admin-filter-format-status').expectOne().hide();
 
+    var tab = (function () {
+        var tab = false;
+        var hash_sequence = window.location.hash.split(/\//);
+        if (/#*(settings|administration)/.test(hash_sequence[0])) {
+            tab = hash_sequence[1];
+        }
+        return tab || "your-account";
+    }());
+
+    exports.launch_page(tab);
+
     $("#id_realm_default_language").val(page_params.realm_default_language);
 
     // create loading indicators
@@ -879,6 +890,18 @@ function _setup_page() {
     });
 
 }
+
+exports.launch_page = function (tab) {
+    var $li = $("#settings_overlay_container li[data-section]");
+    var $active_tab = $("#settings_overlay_container li[data-section='" + tab + "']");
+
+    if ($active_tab.hasClass("admin")) {
+        $(".sidebar .ind-tab[data-name='admin']").click();
+    }
+
+    $("#settings_overlay_container").addClass("show");
+    $active_tab.click();
+};
 
 exports.setup_page = function () {
     i18n.ensure_i18n(_setup_page);
