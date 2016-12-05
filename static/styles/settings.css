@@ -668,19 +668,19 @@ input[type=text]#settings_search {
     border-bottom: 1px solid transparent;
 }
 
-.sidebar li .text,
-.sidebar li .icon {
+#settings_page .sidebar li .text,
+#settings_page .sidebar li .icon {
     display: inline-block;
     vertical-align: top;
 }
 
-.sidebar li .text {
+#settings_page .sidebar li .text {
     width: calc(100% - 55px);
     padding: 10px 12px 10px 0px;
     border-bottom: 1px solid #DDD;
 }
 
-.sidebar li .icon {
+#settings_page .sidebar li .icon {
     width: 18px;
     height: 18px;
     margin: 10px 10px;
@@ -693,24 +693,24 @@ input[type=text]#settings_search {
     background-repeat: no-repeat;
 }
 
-.sidebar li.admin {
+#settings_page .sidebar li.admin {
     display: none;
 }
 
-.sidebar li.admin .icon {
+#settings_page .sidebar li.admin .icon {
     text-align: center;
     color: #3686c3;
 }
 
-.sidebar li.active .icon {
+#settings_page .sidebar li.active .icon {
     -webkit-filter: brightness(10);
 }
 
-.sidebar li:last-of-type .text {
+#settings_page .sidebar li:last-of-type .text {
     border-bottom: none;
 }
 
-.sidebar .sidebar-bottom-anchor {
+#settings_page .sidebar .sidebar-bottom-anchor {
     width: 100%;
     position: absolute;
     bottom: 0px;
