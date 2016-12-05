@@ -9,12 +9,12 @@ Editing your profile lets you adjust the details of your account and gives a bet
 ![settings](/static/images/help/cog_dropdown_settings.png)
 
 
-### Change profile name 
+### Changing your profile name 
 1. Under the "**Your Account**" section, edit your full name
 2. Click Save Changes once you’re finished!
 
 ![your_account](/static/images/help/your_account_section.png)
 
-### Update Avatar
+### Updating your Avatar
 1. Under the "**Your Account**" section, click the Customize avatar and choose an image to upload as your avatar.
 2. Click Save Changes once you’re finished!
