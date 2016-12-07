@@ -29,6 +29,7 @@ as a “**realm**”.
 - **[Editing your profile](/help/edit-profile)**
 - **[Create a stream](/help/create-a-stream.md)**
 - **[Posting and replying](#posting-and-replying)**
+- **[Using emoji in messages](/help/emoji)**
 - **[Mention a Team Member](/help/mention-a-team-member)**
 - **[Change Your Name](/help/name-change)**
 - **[Message formatting](/help/message-formatting.md)**
