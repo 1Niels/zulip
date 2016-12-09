@@ -45,8 +45,8 @@ class LinksHandler(object):
                                                'from %s:' % (original_sender,))
 
         client.send_message(dict(
+            type='private',
             to=original_sender,
-            subject=message['sender_email'],
             content=new_content,
         ))
 
