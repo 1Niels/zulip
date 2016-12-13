@@ -7,6 +7,10 @@ label {
     margin: 0;
 }
 
+form {
+    padding-left: 15px;
+}
+
 .new-style .block {
     display: block;
 }
@@ -61,7 +65,6 @@ label {
 .user-avatar-section {
     float: right;
     background-color: #fff;
-    margin: 20px 0px;
     padding: 20px;
 }
 
@@ -74,7 +77,7 @@ label {
 }
 
 .side-padded-container {
-    padding: 0px 20px;
+    padding: 0px 20px; 
 }
 
 .table.table-condensed.table-striped {
@@ -102,6 +105,7 @@ td .button {
     overflow: hidden;
     border: 1px solid #dfdfdf;
     border-top: 5px solid #dfdfdf;
+    padding-bottom: 20px;
 }
 
 #administration .settings-section {
@@ -120,7 +124,7 @@ td .button {
 
 .settings-section .settings-section-title {
     font-size: 1.2em;
-    font-weight: 300;
+    font-weight: 700;
     padding: 10px;
 }
 
@@ -130,7 +134,6 @@ td .button {
 }
 
 .settings-section form {
-    padding: 0px 20px;
     margin: 0;
 }
 
@@ -194,11 +197,6 @@ td .button {
 
 input[type=checkbox] + .inline-block {
     margin-left: 10px;
-}
-
-#user-settings-avatar {
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
 input[type=checkbox].inline-block {
@@ -476,7 +474,6 @@ input[type=checkbox].inline-block {
 }
 
 #user-settings-avatar {
-    border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     width: 200px;
     height: 200px;
@@ -520,9 +517,9 @@ input[type=checkbox].inline-block {
 }
 
 #settings_page {
-    height: 95vh;
-    width: 97vw;
-    margin: 2.5vh 1.5vw;
+    height: 90vh;
+    width: 80vw;
+    margin: 4.5vh 10.5vw;
     background-color: #fff;
     overflow: hidden;
     border-radius: 4px;
@@ -536,18 +533,18 @@ input[type=checkbox].inline-block {
 #settings_page .sidebar {
     float: left;
     position: relative;
-    width: 250px;
+    width: 225px;
     height: 100%;
     min-height: 550px;
     overflow-y: auto;
-    background-color: #edefef;
+    background-color: #ffffff;
     border-top-left-radius: 4px;
+    border-right: 1px solid #DDD;
 }
 
 #settings_page .sidebar .tab-container {
     border-right: 1px solid #edefef;
     background-color: #fff;
-    padding: 10px;
 }
 
 #settings_page .sidebar .settings-list {
@@ -589,19 +586,26 @@ input[type=checkbox].inline-block {
 }
 
 #settings_page .settings-header {
-    padding-top: 5px;
-    color: #555;
+    padding-top: 1px;
+    color: #434545;
+    border-bottom: 1px solid #DDD;
+    padding-left: 5px;
 }
 
 #settings_page .settings-header h1 {
     display: inline-block;
-    font-size: 1.5rem;
-    margin: 3px 0 0 20px;
+    font-size: 1rem;
+    margin: 1px 0 0 27.5%;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 #settings_page .settings-header .exit {
     float: right;
-    margin: 7px 20px 0 0;
+    margin: 0px 20px 0 0;
+    cursor: pointer;
+    color: #c7c9c9;
 }
 
 #deactivation_user_modal.fade.in {
@@ -642,13 +646,13 @@ input[type=text]#settings_search {
 #settings_page .sidebar ul {
     list-style: none;
     margin: 0;
-    padding: 0;
 }
 
 #settings_page .sidebar li {
     outline: none;
     cursor: pointer;
     transition: all 0.2s ease;
+    padding-left: 10px;
 }
 
 #settings_page .sidebar li.no-border .text {
@@ -656,8 +660,7 @@ input[type=text]#settings_search {
 }
 
 #settings_page .sidebar li.active {
-    background-color: #21cbc2;
-    color: #fff;
+    background-color: #edefef;
 }
 
 #settings_page .sidebar li.admin.active {
@@ -677,7 +680,6 @@ input[type=text]#settings_search {
 #settings_page .sidebar li .text {
     width: calc(100% - 55px);
     padding: 10px 12px 10px 0px;
-    border-bottom: 1px solid #DDD;
 }
 
 #settings_page .sidebar li .icon {
@@ -687,7 +689,7 @@ input[type=text]#settings_search {
 
     font-size: 1.4em;
 
-    color: #21cbc2;
+    color: #57c1af;
 
     background-size: cover;
     background-repeat: no-repeat;
@@ -700,10 +702,6 @@ input[type=text]#settings_search {
 #settings_page .sidebar li.admin .icon {
     text-align: center;
     color: #3686c3;
-}
-
-#settings_page .sidebar li.active .icon {
-    -webkit-filter: brightness(10);
 }
 
 #settings_page .sidebar li:last-of-type .text {
