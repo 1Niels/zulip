@@ -217,6 +217,10 @@ exports.populate_auth_methods = function (auth_methods) {
     loading.destroy_indicator($('#admin_page_auth_methods_loading_indicator'));
 };
 
+exports.set_up_deactivate_user_modal = function (row) {
+    meta.current_deactivate_user_modal_row = row;
+};
+
 function _setup_page() {
     var domains_string = stringify_list_with_conjunction(page_params.domains, "or");
     var atdomains = page_params.domains.slice();
@@ -373,7 +377,7 @@ function _setup_page() {
         }
     });
 
-    $("#do_deactivate_user_button").expectOne().click(function () {
+    $("#do_deactivate_user_button").expectOne().click(function (e) {
         var email = meta.current_deactivate_user_modal_row.find(".email").text();
 
         if ($("#deactivation_user_modal .email").html() !== email) {
@@ -385,7 +389,7 @@ function _setup_page() {
         meta.current_deactivate_user_modal_row.find("button").eq(0).prop("disabled", true).text("Working…");
         channel.del({
             url: '/json/users/' + email,
-            error: function (xhr) {
+            error: function (xhr, error_type) {
                 if (xhr.status.toString().charAt(0) === "4") {
                     meta.current_deactivate_user_modal_row.find("button").closest("td").html(
                         $("<p>").addClass("text-error").text(JSON.parse(xhr.responseText).msg)
