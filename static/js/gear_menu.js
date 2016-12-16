@@ -50,13 +50,13 @@ exports.initialize = function () {
     // templates.
 
     var admin_link = $('#gear-menu a[href="#administration"]');
-    admin_link.on('shown', function () {
+    admin_link.on('click', function () {
         location.hash = "settings/your-account";
     });
 
     var settings_link = $('#gear-menu a[data-popup="settings"]');
     settings_link.on('click', function () {
-        location.hash = "settings/your-account";
+        location.hash = "administration/organization-settings";
     });
 };
 
